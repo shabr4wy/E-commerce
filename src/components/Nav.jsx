@@ -17,15 +17,15 @@ const Nav = () => {
   return (
     <nav className="nav">
       <ul>
-        <li>
+        <li key="allProducts">
           <a>All Products</a>
         </li>
-        <li>
+        <li key="categories">
           <details>
             <summary>Categories</summary>
             <ul>
               {categories.map((category) => (
-                <li>
+                <li key={category}>
                   <a href="">{category}</a>
                 </li>
               ))}
