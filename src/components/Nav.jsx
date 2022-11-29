@@ -18,12 +18,18 @@ const Nav = () => {
     <nav className="nav">
       <ul>
         <li>
-          <a>ALl Products</a>
+          <a>All Products</a>
         </li>
         <li>
           <details>
             <summary>Categories</summary>
-            <ul></ul>
+            <ul>
+              {categories.map((category) => (
+                <li>
+                  <a href="">{category}</a>
+                </li>
+              ))}
+            </ul>
           </details>
         </li>
       </ul>
