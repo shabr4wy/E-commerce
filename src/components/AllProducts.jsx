@@ -16,7 +16,17 @@ const AllProdcucts = () => {
     getProducts();
   }, [products]);
 
-  return <div className="main__products"></div>;
+  return (
+    <div className="main__products">
+      <ul>
+        {products.map((product) => (
+          <li>
+            <a href="">{product.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default AllProdcucts;

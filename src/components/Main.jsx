@@ -1,7 +1,13 @@
 /** @format */
 
+import AllProdcucts from "./AllProducts";
+
 const Main = () => {
-  return <main></main>;
+  return (
+    <main>
+      <AllProdcucts />
+    </main>
+  );
 };
 
 export default Main;
