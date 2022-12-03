@@ -14,7 +14,9 @@ const AllProdcucts = () => {
         });
     };
     getProducts();
-  }, [products]);
+  }, []);
+
+  console.log(products);
 
   return (
     <main className="main">

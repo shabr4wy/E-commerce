@@ -12,7 +12,7 @@ const Nav = () => {
         .then((categories) => setCategories([...categories]));
     };
     getCategories();
-  }, [categories]);
+  }, []);
 
   return (
     <nav className="nav">
