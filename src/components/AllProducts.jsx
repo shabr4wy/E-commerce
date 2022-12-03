@@ -1,5 +1,6 @@
 /** @format */
 
+import Products from "./Products";
 import { useEffect, useState } from "react";
 
 const AllProdcucts = () => {
@@ -16,19 +17,7 @@ const AllProdcucts = () => {
     getProducts();
   }, []);
 
-  return (
-    <main className="main">
-      <div className="main__allProducts">
-        <ul>
-          {products?.map((product) => (
-            <li key={product?.title}>
-              <a href="">{product?.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </main>
-  );
+  return <Products products={products} />;
 };
 
 export default AllProdcucts;
