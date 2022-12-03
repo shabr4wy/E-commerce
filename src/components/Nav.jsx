@@ -1,6 +1,7 @@
 /** @format */
 
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [categories, setCategories] = useState([]);
@@ -18,7 +19,7 @@ const Nav = () => {
     <nav className="nav">
       <ul>
         <li key="allProducts">
-          <a>All Products</a>
+          <Link to="/">All Products</Link>
         </li>
         <li key="categories">
           <details>
