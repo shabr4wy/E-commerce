@@ -8,7 +8,7 @@ const Nav = () => {
   useEffect(() => {
     const getCategories = () => {
       fetch("https://dummyjson.com/products/categories")
-        .then((res) => res.json())
+        .then((res) => res?.json())
         .then((categories) => setCategories([...categories]));
     };
     getCategories();
@@ -24,7 +24,7 @@ const Nav = () => {
           <details>
             <summary>Categories</summary>
             <ul>
-              {categories.map((category) => (
+              {categories?.map((category) => (
                 <li key={category}>
                   <a href="">{category}</a>
                 </li>

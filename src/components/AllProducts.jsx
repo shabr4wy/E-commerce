@@ -10,7 +10,7 @@ const AllProdcucts = () => {
       fetch("https://dummyjson.com/products?limit=10")
         .then((res) => res.json())
         .then((data) => {
-          setProducts([...data.products]);
+          setProducts([...data?.products]);
         });
     };
     getProducts();
@@ -20,9 +20,9 @@ const AllProdcucts = () => {
     <main className="main">
       <div className="main__allProducts">
         <ul>
-          {products.map((product) => (
+          {products?.map((product) => (
             <li key={product?.name}>
-              <a href="">{product.title}</a>
+              <a href="">{product?.title}</a>
             </li>
           ))}
         </ul>
