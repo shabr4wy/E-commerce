@@ -17,15 +17,17 @@ const AllProdcucts = () => {
   }, [products]);
 
   return (
-    <div className="main__products">
-      <ul>
-        {products.map((product) => (
-          <li>
-            <a href="">{product.title}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <main className="main">
+      <div className="main__allProducts">
+        <ul>
+          {products.map((product) => (
+            <li>
+              <a href="">{product.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </main>
   );
 };
 

@@ -6,15 +6,17 @@ const CategoryProducts = () => {
   const [categoryProducts, setCategoryProducts] = useState([]);
 
   return (
-    <div className="main__products">
-      <ul>
-        {categoryProducts.map((product) => (
-          <li>
-            <a href="">{product.title}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <main>
+      <div className="main__products">
+        <ul>
+          {categoryProducts.map((product) => (
+            <li>
+              <a href="">{product.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </main>
   );
 };
 
