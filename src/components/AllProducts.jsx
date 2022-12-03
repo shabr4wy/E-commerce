@@ -16,14 +16,12 @@ const AllProdcucts = () => {
     getProducts();
   }, []);
 
-  console.log(products);
-
   return (
     <main className="main">
       <div className="main__allProducts">
         <ul>
           {products?.map((product) => (
-            <li key={product?.name}>
+            <li key={product?.title}>
               <a href="">{product?.title}</a>
             </li>
           ))}
