@@ -21,7 +21,7 @@ const AllProdcucts = () => {
       <div className="main__allProducts">
         <ul>
           {products.map((product) => (
-            <li>
+            <li key={product?.name}>
               <a href="">{product.title}</a>
             </li>
           ))}
