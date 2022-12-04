@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Products from "./Products";
 
 const CategoryProducts = () => {
   const [categoryProducts, setCategoryProducts] = useState([]);
@@ -31,7 +30,19 @@ const CategoryProducts = () => {
     };
   }, [params.categoryName]);
 
-  return <Products products={categoryProducts} />;
+  return (
+    <main className="main">
+      <div className="main__products">
+        <ul>
+          {categoryProducts?.map((product) => (
+            <li key={product?.title}>
+              <a href="">{product?.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </main>
+  );
 };
 
 export default CategoryProducts;
