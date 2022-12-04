@@ -3,20 +3,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Root from "./routes/Root";
-import Category from "./routes/Category";
 import ErrorPage from "./components/Error-page";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AllProdcucts from "./components/AllProducts";
+import CategoryProducts from "./components/CategoryProducts";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/category/:categoryName",
-    element: <Category />,
+    children: [
+      { index: true, element: <AllProdcucts /> },
+      { path: "/products", element: <AllProdcucts /> },
+      {
+        path: "/products/categories/:categoryName",
+        element: <CategoryProducts />,
+      },
+    ],
   },
 ]);
 

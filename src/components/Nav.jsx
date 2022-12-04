@@ -19,7 +19,7 @@ const Nav = () => {
     <nav className="nav">
       <ul>
         <li key="allProducts">
-          <Link to="/">All Products</Link>
+          <Link to="/products">All Products</Link>
         </li>
         <li key="categories">
           <details>
@@ -27,7 +27,7 @@ const Nav = () => {
             <ul>
               {categories?.map((category) => (
                 <li key={category}>
-                  <Link to={`/category/${category}`}>{category}</Link>
+                  <Link to={`products/categories/${category}`}>{category}</Link>
                 </li>
               ))}
             </ul>

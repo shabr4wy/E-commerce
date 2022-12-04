@@ -1,14 +1,14 @@
 /** @format */
 import Header from "../components/Header";
-import AllProducts from "../components/AllProducts";
 import Nav from "../components/Nav";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
       <Header />
       <Nav />
-      <AllProducts />
+      <Outlet />
     </div>
   );
 };
