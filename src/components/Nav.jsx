@@ -27,7 +27,7 @@ const Nav = () => {
             <ul>
               {categories?.map((category) => (
                 <li key={category}>
-                  <a href="">{category}</a>
+                  <Link to={`/category/${category}`}>{category}</Link>
                 </li>
               ))}
             </ul>
