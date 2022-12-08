@@ -22,6 +22,8 @@ const CategoryProducts = () => {
 
   if (status === "loading") {
     return <Loader />;
+  } else if (status === "error") {
+    throw new Response("Not Found", { status: 404, statusText: "Not Found" });
   } else {
     return (
       <main className="main">
