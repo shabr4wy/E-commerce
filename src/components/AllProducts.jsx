@@ -1,36 +1,20 @@
 /** @format */
-
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
 const AllProdcucts = () => {
-  const [products, setProducts] = useState([]);
+  const getProducts = async () => {
+    const res = await fetch("https://dummyjson.com/products?limit=10");
+    return res.json();
+  };
 
   // fetch products
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    const getCategoryProducts = () => {
-      fetch("https://dummyjson.com/products?limit=10", signal)
-        .then((res) => res.json())
-        .then((data) => {
-          setProducts([...data.products]);
-        });
-    };
-    getCategoryProducts();
-
-    return () => {
-      // cancel the request before component unmounts
-      controller.abort();
-      console.log(signal);
-    };
-  }, []);
+  const { data } = useQuery("allProducts", getProducts);
 
   return (
     <main className="main">
       <div className="main__products">
         <ul>
-          {products?.map((product) => (
+          {data?.products?.map((product) => (
             <li key={product?.title}>
               <a href="">{product?.title}</a>
             </li>
