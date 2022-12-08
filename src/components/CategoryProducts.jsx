@@ -2,6 +2,7 @@
 
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { Loader } from "./Loader";
 
 const CategoryProducts = () => {
   let params = useParams();
@@ -19,19 +20,23 @@ const CategoryProducts = () => {
     getCategoryProducts
   );
 
-  return (
-    <main className="main">
-      <div className="main__products">
-        <ul>
-          {data?.products?.map((product) => (
-            <li key={product?.title}>
-              <a href="">{product?.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </main>
-  );
+  if (status === "loading") {
+    return <Loader />;
+  } else {
+    return (
+      <main className="main">
+        <div className="main__products">
+          <ul>
+            {data?.products?.map((product) => (
+              <li key={product?.title}>
+                <a href="">{product?.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </main>
+    );
+  }
 };
 
 export default CategoryProducts;
