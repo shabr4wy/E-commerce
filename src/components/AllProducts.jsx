@@ -4,7 +4,7 @@ import { Loader } from "./Loader";
 
 const AllProdcucts = () => {
   const getProducts = async () => {
-    const res = await fetch("https://dummyjson.com/products?limit=10");
+    const res = await fetch("https://dummyjson.com/produxcts?limit=10");
     return res.json();
   };
 
@@ -13,6 +13,8 @@ const AllProdcucts = () => {
 
   if (status === "loading") {
     return <Loader />;
+  } else if (status === "error") {
+    throw new Response("Not Found", { status: 404, statusText: "Not Found" });
   } else {
     return (
       <main className="main">
