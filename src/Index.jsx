@@ -9,6 +9,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AllProdcucts from "./components/AllProducts";
 import CategoryProducts from "./components/CategoryProducts";
 
+// react query
+import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+const queryClient = new QueryClient();
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +33,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen />
+    </QueryClientProvider>
   </React.StrictMode>
 );
