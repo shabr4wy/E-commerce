@@ -23,6 +23,8 @@ const CategoryProducts = () => {
   if (status === "loading") {
     return <Loader />;
   } else if (status === "error") {
+    // enable react router to render a nested ErrorPage when response is 404
+    // All routing (including ErrorPage) is managed in the index.js
     throw new Response("Not Found", { status: 404, statusText: "Not Found" });
   } else {
     return (
