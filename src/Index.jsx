@@ -8,6 +8,7 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AllProdcucts from "./components/AllProducts";
 import CategoryProducts from "./components/CategoryProducts";
+import ProductPage from "./routes/Product-page";
 
 // react query
 import { QueryClientProvider, QueryClient } from "react-query";
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
     ],
+  },
+  {
+    path: "/product/:productId",
+    element: <ProductPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
