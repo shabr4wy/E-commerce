@@ -3,6 +3,7 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { Loader } from "./Loader";
+import ProductItem from "./Product-item";
 
 const CategoryProducts = () => {
   let params = useParams();
@@ -33,19 +34,7 @@ const CategoryProducts = () => {
       statusText: `we don't have "${params.categoryName}" products in our store for now. We will consider it in future upgrades.`,
     });
   } else {
-    return (
-      <main className="main">
-        <div className="main__products">
-          <ul>
-            {data?.products?.map((product) => (
-              <li key={product?.title}>
-                <a href="">{product?.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </main>
-    );
+    return <ProductItem data={data} />;
   }
 };
 
