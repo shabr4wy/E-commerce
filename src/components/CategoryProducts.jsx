@@ -26,6 +26,12 @@ const CategoryProducts = () => {
     // enable react router to render a nested ErrorPage when response is 404
     // All routing (including ErrorPage) is managed in the index.js
     throw new Response("Not Found", { status: 404, statusText: "Not Found" });
+  }
+  // handle empty respons that is caused by fetch call of non-existed category products.
+  else if (!data?.products?.length) {
+    throw new Response("Not Found", {
+      statusText: `we don't have "${params.categoryName}" products in our store for now. We will consider it in future upgrades.`,
+    });
   } else {
     return (
       <main className="main">
