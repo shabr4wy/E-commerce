@@ -1,5 +1,7 @@
 /** @format */
 
+import { Link } from "react-router-dom";
+
 const ProductItem = ({ data }) => {
   return (
     <main className="main">
@@ -7,7 +9,7 @@ const ProductItem = ({ data }) => {
         <ul>
           {data?.products?.map((product) => (
             <li key={product?.title}>
-              <a href="">{product?.title}</a>
+              <Link to={`/product/${product?.id}`}>{product?.title}</Link>
             </li>
           ))}
         </ul>
