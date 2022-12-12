@@ -2,6 +2,7 @@
 
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { Loader } from "../Loader";
 
 const ProductPage = () => {
   let params = useParams();
@@ -16,6 +17,9 @@ const ProductPage = () => {
 
   const { data, status } = useQuery("product", getProduct);
 
+  if (status === "loading") {
+    return <Loader />;
+  }
   return (
     <main>
       <p>{data?.title}</p>
