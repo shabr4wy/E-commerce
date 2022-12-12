@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { Loader } from "../Loader";
 
-const ProductPage = () => {
+const Product = () => {
   let params = useParams();
 
   // fetch product data using product id
@@ -27,4 +27,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default Product;

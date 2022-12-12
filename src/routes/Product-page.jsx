@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Header from "../components/Header";
 
-const Product = () => {
+const ProductPage = () => {
   const [Product, setProduct] = useState();
 
   return (
@@ -13,3 +13,5 @@ const Product = () => {
     </main>
   );
 };
+
+export default ProductPage;
